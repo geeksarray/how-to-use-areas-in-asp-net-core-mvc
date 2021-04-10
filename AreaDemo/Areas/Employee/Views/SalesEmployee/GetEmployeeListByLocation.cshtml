@@ -1,0 +1,29 @@
+﻿@model IEnumerable<AreaDemo.Areas.Employee.Models.Employee>
+@{
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>LocationID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.ID</td>
+                    <td>@p.Name</td>
+                    <td>@p.Designation</td>
+                    <td>@p.LocationID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

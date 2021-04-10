@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AreaDemo.Areas.Departments.Models.Location>
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+
+@{
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Employee List</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.ID</td>
+                    <td>@p.Address</td>
+                    <td>@p.City</td>
+                    <td>
+                        <a asp-area="Employee" asp-controller="SalesEmployee"
+                           asp-action="GetEmployeeListByLocation" 
+                           asp-route-locationID =@p.ID>
+                            View Employee List
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
