@@ -1,0 +1,1 @@
+# how-to-use-areas-in-asp-net-core-mvc
